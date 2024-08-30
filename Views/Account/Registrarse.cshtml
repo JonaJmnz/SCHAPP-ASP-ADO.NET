@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Registrarse";
+}
+<h2 id ="idTitulo">Registra tus datos</h2>
+<div class="row d-flex mb-3">
+<!--Primera columna del formulario-->
+<div class="col-6">
+    <!-- Campo Nombre Usuario -->
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre Usuario</label>
+        <input type="text" class="form-control" id="inpNombreUsu" placeholder="Selecciona nombre de usuario disponible" required>
+    </div>
+
+    <!-- Campo Nombre -->
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="inpNombre" placeholder="Introduce tu nombre" required>
+    </div>
+
+    <!-- Campo AP paterno -->
+    <div class="mb-3">
+        <label for="ap_paterno" class="form-label">Apellido Paterno</label>
+        <input type="text" class="form-control" id="inpApPaterno" placeholder="Introduce tu Apellido paterno" required>
+    </div>
+
+    <!-- Campo AP materno -->
+    <div class="mb-3">
+        <label for="ap_materno" class="form-label">Apellido Materno</label>
+        <input type="text" class="form-control" id="inpApMaterno" placeholder="Introduce tu Apellido materno" required>
+    </div>
+
+    <!-- Campo Email -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inpEmail" placeholder="ejemplo@dominio.com" required>
+    </div>
+
+    <!-- Campo Fecha de nacimiento -->
+    <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha de nacimiento</label>
+        <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Debes tener al menos 15 años"></i>
+        <input type="date" class="form-control" id="inpFdeNacimiento">
+    </div>
+</div>
+<!-- Segunda columna del forulario-->
+<div class="col-6">
+    <!-- Campo Teléfono -->
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="tel" class="form-control" id="inpTelefono" placeholder="Introduce tu número de teléfono" pattern="[0-9]{10,15}" required>
+    </div>
+
+    <!-- Campo Domicilio -->
+    <div class="mb-3">
+        <label for="domicilio" class="form-label">Domicilio</label>
+        <input type="text" class="form-control" id="inpDomicilio" placeholder="Introduce tu domicilio" required>
+    </div>
+
+    <!-- Campo Cliente o Servidor -->
+    <div class="mb-3">
+        <label for="cliserv" class="form-label">Cliente o Servidor</label>
+        <select class="form-select" id="slctCliServ" aria-label="Selecciona una opción">
+            <option selected disabled>Selecciona una opción</option>
+            <option value="1">Cliente</option>
+            <optgroup label="Servidor de">
+                <option value="2-1">Servidor de Barberia</option>
+                <option value="2-2">Servidor de Uñas</option>
+                <option value="2-3">Servidor de Pestañas</option>
+                <option value="2-3" id="opOtrServ">Otro...</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <!-- Campo otro servicio -->
+    <div class="mb-3">
+        <input type="text" class="form-control d-none" id="inpOtrServ" placeholder="Otro servicio" required>
+    </div>
+
+    <!-- Campo de sexo-->
+    <div class="mb-3" style="height: 69px;">
+        <label for="text" class="form-label">Sexo:</label>
+        <div style="height: 5px;"></div>
+        <!-- Grupo de Radio Buttons -->
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="opciones" id="rbtnMujer" value="opcion1" checked>
+            <label class="form-check-label" for="opcion1">
+                Mujer
+            </label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="opciones" id="rbtnHombre" value="opcion2">
+            <label class="form-check-label" for="opcion2">
+                Hombre
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="opciones" id="rbtnPrivado" value="opcion3" checked>
+            <label class="form-check-label" for="opcion3">
+                Prefiero no especificar
+            </label>
+        </div>
+    </div>
+    
+    <!-- Campo Password -->
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="inpInContraseña" placeholder="Introduce una contraseña" required>
+    </div>
+
+    <!-- Campo Password confirmacion-->
+    <div class="mb-3">
+        <label for="password" class="form-label">Confirma tu Contraseña</label>
+        <input type="password" class="form-control" id="inpInContraseña2" placeholder="Confirma tu contraseña" required>
+    </div>
+</div>
+<div class="mb-3">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border  d-none" role="status" id="spnrRegistrar">
+            <span class="visually-hidden">Registrando...</span>
+        </div>
+        <!-- Botón de Envío -->
+        <button type="submit" class="btn btn-primary" id="btnRegistrar">Enviar</button>
+    </div>
+</div>
+</div>    
+<script src="~/js/jsRegistrarse.js"></script>
+
+
+
