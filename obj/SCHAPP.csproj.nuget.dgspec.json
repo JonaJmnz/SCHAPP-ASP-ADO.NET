@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jona_Jmnz\\Documents\\JONA\\SCHAPP\\SCHAPP.csproj": {}
+    "C:\\Users\\Jona_Jmnz\\Documents\\Repo_GIT\\SCHAPP\\SCHAPP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jona_Jmnz\\Documents\\JONA\\SCHAPP\\SCHAPP.csproj": {
+    "C:\\Users\\Jona_Jmnz\\Documents\\Repo_GIT\\SCHAPP\\SCHAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jona_Jmnz\\Documents\\JONA\\SCHAPP\\SCHAPP.csproj",
+        "projectUniqueName": "C:\\Users\\Jona_Jmnz\\Documents\\Repo_GIT\\SCHAPP\\SCHAPP.csproj",
         "projectName": "SCHAPP",
-        "projectPath": "C:\\Users\\Jona_Jmnz\\Documents\\JONA\\SCHAPP\\SCHAPP.csproj",
+        "projectPath": "C:\\Users\\Jona_Jmnz\\Documents\\Repo_GIT\\SCHAPP\\SCHAPP.csproj",
         "packagesPath": "C:\\Users\\Jona_Jmnz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jona_Jmnz\\Documents\\JONA\\SCHAPP\\obj\\",
+        "outputPath": "C:\\Users\\Jona_Jmnz\\Documents\\Repo_GIT\\SCHAPP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
