@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SCHAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f727e124ad2def4632fd4d12d6066f74b9a59b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75c562ac2c24c389fcf5363ef91680cf3db144da")]
 [assembly: System.Reflection.AssemblyProductAttribute("SCHAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SCHAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
