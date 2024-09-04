@@ -6,16 +6,20 @@ using SCHAPP.Models;
 using System.Security.Claims;
 using Oracle.ManagedDataAccess.Client;
 using Microsoft.AspNetCore.Authorization;
+using SCHAPP.Services;
 
 namespace SCHAPP.Controllers
 {
     public class AccountController : Controller
     {
         private readonly OracleDbContext _dbContext;
-        private readonly string USUARIOS_PKG = "USUARIOS_PKG.";
+        private readonly string USUARIOS_PKG = "USUARIOS_PKG."; 
+        private readonly CustomAuthenticationService _authService;
 
-        public AccountController(IConfiguration configuration)
+
+        public AccountController(IConfiguration configuration,CustomAuthenticationService authService)
         {
+            _authService = authService;
             string connectionString = configuration.GetConnectionString("OracleDbContext");
             _dbContext = new OracleDbContext(connectionString);
         }
@@ -35,7 +39,7 @@ namespace SCHAPP.Controllers
         {
             return PartialView("Login");
         }
-        [Authorize]
+        [Authorize(Roles = "CLIENTE")]
         public IActionResult Registrarse()
         {
             return View();
@@ -46,7 +50,17 @@ namespace SCHAPP.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (IsValidUser(model.Username, model.Password))
+            var user = await _authService.AuthenticateAsync(model.Username, model.Password);
+
+            if (user != null && user.Roles.Count() > 0)
+            {
+                return Ok("Exito");
+            }
+
+            ModelState.AddModelError(string.Empty, "Nombre de usuario o contraseña incorrectos.");
+            return PartialView();
+
+            /*if (IsValidUser(model.Username, model.Password))
             {
                 var claims = new List<Claim>
                 {
@@ -62,25 +76,8 @@ namespace SCHAPP.Controllers
             }
 
             ViewBag.ErrorMessage = "Usuario o contraseña incorrectos";
-            return PartialView();
-            /*if (ModelState.IsValid)
-            {
-                // Suponiendo que tienes una lógica para validar el usuario
-                //var isValidUser = (model.Username == "admin" && model.Password == "admin");
-
-                // Consulta de ejemplo
-                //string consulta = "SELECT * FROM usuarios";
-                //var datos = _dbContext.EjecutarConsulta(consulta);
-
-                if(IsValidUser(model.Username, model.Password))
-                {
-                    return Ok("Exito");
-                }
-
-                ModelState.AddModelError("", "Usuario o contraseña incorrectos.");
-            }
-
             return PartialView();*/
+
         }
         public async Task<IActionResult> Logout()
         {
