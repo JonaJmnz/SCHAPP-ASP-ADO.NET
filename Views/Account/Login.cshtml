@@ -2,18 +2,19 @@
 @{
     ViewData["Title"] = "Login";
 }
+
 <form asp-action="Login" method="post" id="loginForm">
     <div class="form-group">
         <label asp-for="Username"></label>
-        <input asp-for="Username" class="form-control" />       
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
     </div>
-    <span asp-validation-for="Username" class="text-danger"></span>
 
     <div class="form-group">
         <label asp-for="Password"></label>
         <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
-    <span asp-validation-for="Password" class="text-danger"></span>
     <div class="form-group form-check">
         <input asp-for="RememberMe" class="form-check-input" />
         <label asp-for="RememberMe" class="form-check-label"></label>

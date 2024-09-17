@@ -8,7 +8,7 @@ namespace SCHAPP.Models
         [Display(Name = "Nombre de Usuario")]
         public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Contraseña invalida.")]
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
         public string Password { get; set; }

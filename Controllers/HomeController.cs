@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace SCHAPP.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,7 +14,6 @@ namespace SCHAPP.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();

@@ -35,7 +35,9 @@
 
                 <div class="float-end mr-3 d-flex" style="margin-right: 20px;margin-top: 5px;">
                     <label for="tipo" class="form-label" style="margin-top: 8px;" id="txtUsuario">Usuario:</label>
-                    <i class="bi bi-box-arrow-right ms-2 fs-3" id="btnSalir" type="button"></i>
+                    <a id="btnSalir" class="nav-link text-dark d-none" asp-area="" asp-controller="Account" asp-action="Logout">
+                        <i class="bi bi-box-arrow-right ms-2 fs-3" id="btnSalir" type="button"></i>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -78,6 +80,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/jsLayout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
